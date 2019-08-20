@@ -1,5 +1,9 @@
 
 ## 玩起来
+### 安装
+`make install`
+
+### 用法
 首先来看`callgraph`的help:
 ```
 ./callgraph
@@ -43,6 +47,7 @@ cflow:init/main.c:1045: this is the place of previous definition
 Target: init/main.c : start_kernel -> .//start_kernel.all.svg
 ```
 ![](start_kernel.png)
+一个更完整的例子 [点击这里](https://ysun.github.io/callgraph/example.svg)
 
 ## 原理
 callgraph 实际上只是灵活组装了三个工具，一个是 cflow，一个是 tree2dotx，另外一个是 dot。
@@ -61,5 +66,3 @@ callgraph 实际上只是灵活组装了三个工具，一个是 cflow，一个�
 ## 趣玩 tree2dotx
 展示目录结构:
 `$ tree -I '*.h|README.rst|scripts*|include*' -f -n | tree2dotx  | dot -Tsvg -o tree.svg`
-
-
